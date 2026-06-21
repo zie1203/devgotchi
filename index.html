@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevGotchi: Workspace Companion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sandbox-container">
+        
+        <main class="device-wrapper">
+            <div class="tamagotchi-case">
+                <div class="brand-header">DEVGOTCHI v1.0</div>
+                
+                <div class="lcd-screen">
+                    <div class="status-indicators">
+                        <span id="stat-energy" title="Commit Energy">⚡ 100%</span>
+                        <span id="stat-mood" title="Current Mood">😐 Neutral</span>
+                        <span id="stat-level" title="Developer Level">Lvl 1</span>
+                    </div>
+
+                    <div class="sprite-display" id="pet-container">
+                        <div class="pixel-pet" id="pet-sprite">(o_o)</div>
+                        <div class="speech-bubble" id="pet-speech">Code... Code...</div>
+                    </div>
+
+                    <div class="screen-footer">
+                        <span id="status-ticker">Awaiting system synchronization...</span>
+                    </div>
+                </div>
+
+                <div class="button-pad">
+                    <button class="hardware-btn" id="btn-coffee" title="Feed Coffee">
+                        <span class="btn-cap">A</span>
+                        <span class="btn-label">Coffee</span>
+                    </button>
+                    <button class="hardware-btn" id="btn-clean" title="Fix Bugs">
+                        <span class="btn-cap">B</span>
+                        <span class="btn-label">Refactor</span>
+                    </button>
+                    <button class="hardware-btn" id="btn-sync" title="Force Sync API">
+                        <span class="btn-cap">C</span>
+                        <span class="btn-label">Sync</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <aside class="debug-panel">
+            <h2>DevGotchi Control Matrix</h2>
+            <p class="panel-subtitle">Simulate real-time workspace metrics to stress-test the state machine.</p>
+            
+            <section class="debug-section">
+                <h3>1. Live API Sync</h3>
+                <div class="input-group">
+                    <input type="text" id="github-username" placeholder="Enter GitHub Handle...">
+                    <button id="btn-connect-api">Fetch Events</button>
+                </div>
+                <small>Queries public REST endpoints asynchronously.</small>
+            </section>
+
+            <section class="debug-section">
+                <h3>2. Time-Warp Simulations</h3>
+                <div class="debug-actions">
+                    <button class="debug-btn trigger-state" data-state="grind">
+                        🚀 Simulate Crunch Time (10+ Commits)
+                    </button>
+                    <button class="debug-btn trigger-state" data-state="healthy">
+                        ✅ Simulate Normal Activity (Recent Push)
+                    </button>
+                    <button class="debug-btn trigger-state" data-state="slacker">
+                        ⚠️ Simulate Slacker State (3+ Days Inactive)
+                    </button>
+                </div>
+            </section>
+
+            <section class="debug-section">
+                <h3>3. Engine Readouts</h3>
+                <div class="log-screen">
+                    <div>[System]: Core engine deployed initialized.</div>
+                    <div id="engine-state-readout">Active State: Idle_Neutral</div>
+                </div>
+            </section>
+        </aside>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
